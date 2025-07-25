@@ -442,7 +442,7 @@
                 "requirements":
                 [
                     { "flag": "FLAG_ROGUE_HAS_RANDOM_STARTER", "state": true },
-                    { "config_toggle": "CONFIG_TOGGLE_BAG_WIPE", "state": true },
+                    { "config_toggle": "CONFIG_TOGGLE_BAG_WIPE", "state": true }
                 ],
                 "rewards":
                 [
