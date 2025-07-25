@@ -4769,10 +4769,15 @@ static void ChooseTeamEncountersForNewAdventure()
 u8 Rogue_GetCurrentLegendaryEncounterId()
 {
     u8 i;
-
+    u8 diff = Rogue_GetCurrentDifficulty();
+    // in gauntlet difficulty is 0 but we use elite - 1 for map generation
+    if (Rogue_GetModeRules()->adventureGenerator == ADV_GENERATOR_GAUNTLET)
+    {
+        diff = ROGUE_ELITE_START_DIFFICULTY - 1
+    }
     for(i = 0; i < ADVPATH_LEGEND_COUNT; ++i)
     {
-        if(gRogueRun.legendaryDifficulties[i] == Rogue_GetCurrentDifficulty())
+        if(gRogueRun.legendaryDifficulties[i] == diff)
             return i;
     }
 
