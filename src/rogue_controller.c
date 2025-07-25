@@ -5163,7 +5163,7 @@ u8 Rogue_SelectRouteRoom(u8 difficulty)
 
         if (gSaveBlock2Ptr->optionsQuickRoute == OPTIONS_QUICKROUTE_ON)
         {
-            for(i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount; ++i) // To exclusively use quickmap
+            for(i = gRogueRouteTable.routeCount - 3; i < gRogueRouteTable.routeCount; ++i) // To exclusively use quickmap
             {
                 RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
             }
@@ -5171,7 +5171,7 @@ u8 Rogue_SelectRouteRoom(u8 difficulty)
 
         else
         {
-            for(i = 0; i < gRogueRouteTable.routeCount - 6; ++i) // To remove quickmap from default run
+            for(i = 0; i < gRogueRouteTable.routeCount - 3; ++i) // To remove quickmap from default run
             {
                 RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
             }
