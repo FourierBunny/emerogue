@@ -5104,12 +5104,12 @@ static u8 SelectRouteRoom_CalculateWeight(u16 index, u16 routeId, void* data, bo
     
     // Quick route only
     // TODO(?) check if a type is already used perhaps? Not a thing here apparently since it only deals with whether the route is used or not
-    // Basegame already has duplicated types anyway. It's only more noticeable here due to the fact that we're limited with 6 maps
+    // Basegame already has duplicated types anyway. It's only more noticeable here due to the fact that we're limited with 3 maps
     else if (HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId))
     {
          u8 quickRoutesUsedCount = 0;
 
-        for (u8 i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount; ++i)
+        for (u8 i = gRogueRouteTable.routeCount - 3; i < gRogueRouteTable.routeCount; ++i)
         {
             if (HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), i))
             {
@@ -5117,8 +5117,8 @@ static u8 SelectRouteRoom_CalculateWeight(u16 index, u16 routeId, void* data, bo
             }
         }
 
-        // If all 6 quick routes are in use, allow reuse by returning 255
-        if (quickRoutesUsedCount >= 6)
+        // If all 3 quick routes are in use, allow reuse by returning 255
+        if (quickRoutesUsedCount >= 3)
         {
             return 255;
         }
@@ -5194,7 +5194,7 @@ u8 Rogue_SelectRouteRoom(u8 difficulty)
     RogueCustomQuery_End();
 
     // Sanity check that we haven't already placed this route on this path
-    AGB_ASSERT(!HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId));
+    //AGB_ASSERT(!HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId));
 
     HistoryBufferPush(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), routeId);
 

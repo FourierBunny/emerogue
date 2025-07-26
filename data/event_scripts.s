@@ -719,6 +719,10 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Rogue_Route_Chaos0/scripts.inc"
 
+	.include "data/maps/Rogue_Route_Chaos1/scripts.inc"
+
+	.include "data/maps/Rogue_Route_Chaos2/scripts.inc"
+
 	.include "data/maps/Rogue_Route_Johto_Field0/scripts.inc"
 
 	.include "data/maps/Rogue_Encounter_Lab/scripts.inc"
