@@ -4,4 +4,23 @@ mapscripts Rogue_Route_QuickMap1_MapScripts
     [
         VAR_TEMP_1, 0: Rogue_Common_TurnPlayerNorth
     ]
+    MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+        VAR_TEMP_1, 0: Rogue_Route_QuickMap1_OnFrame0
+        //VAR_TEMP_1, 1: Rogue_Route_Urban0_OnFrame1
+    ]
+}
+
+script Rogue_Route_QuickMap1_OnFrame0
+{
+    lockall
+    special(DoSealedChamberShakingEffect_Short)
+    waitstate
+    playse(SE_DOOR)
+    delay(10)
+    setmetatile(42,63, 0x1A1, TRUE)
+    releaseall
+
+    setvar(VAR_TEMP_1, 1)
+    end
 }
