@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ROGUE_ROUTE_CHAOS0",
-  "name": "Rogue_Route_Chaos0",
-  "layout": "LAYOUT_ROGUE_ROUTE_CHAOS0",
+  "id": "MAP_ROGUE_ROUTE_CHAOS1",
+  "name": "Rogue_Route_Chaos1",
+  "layout": "LAYOUT_ROGUE_ROUTE_CHAOS1",
   "music": "MUS_ABNORMAL_WEATHER",
   "region_map_section": "MAPSEC_ADVENTURE",
   "requires_flash": false,
@@ -709,28 +709,28 @@
       "x": 43,
       "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_ROGUE_ROUTE_CHAOS0",
+      "dest_map": "MAP_ROGUE_ROUTE_CHAOS1",
       "dest_warp_id": 0
     },
     {
       "x": 15,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_ROGUE_ROUTE_CHAOS0",
+      "dest_map": "MAP_ROGUE_ROUTE_CHAOS1",
       "dest_warp_id": 0
     },
     {
       "x": 42,
       "y": 63,
       "elevation": 0,
-      "dest_map": "MAP_ROGUE_ROUTE_CHAOS0",
+      "dest_map": "MAP_ROGUE_ROUTE_CHAOS1",
       "dest_warp_id": 0
     },
     {
       "x": 66,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ROGUE_ROUTE_CHAOS0",
+      "dest_map": "MAP_ROGUE_ROUTE_CHAOS1",
       "dest_warp_id": 0
     }
   ],
