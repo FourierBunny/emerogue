@@ -5109,7 +5109,7 @@ static u8 SelectRouteRoom_CalculateWeight(u16 index, u16 routeId, void* data, bo
     {
          u8 quickRoutesUsedCount = 0;
 
-        for (u8 i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount; ++i)
+        for (u8 i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount - 3; ++i)
         {
             if (HistoryBufferContains(&gRogueAdvPath.routeHistoryBuffer[0], ARRAY_COUNT(gRogueAdvPath.routeHistoryBuffer), i))
             {
@@ -5117,8 +5117,8 @@ static u8 SelectRouteRoom_CalculateWeight(u16 index, u16 routeId, void* data, bo
             }
         }
 
-        // If all 6 quick routes are in use, allow reuse by returning 255
-        if (quickRoutesUsedCount >= 6)
+        // If all 3 quick routes are in use, allow reuse by returning 255
+        if (quickRoutesUsedCount >= 3)
         {
             return 255;
         }
@@ -5163,7 +5163,7 @@ u8 Rogue_SelectRouteRoom(u8 difficulty)
 
         if (gSaveBlock2Ptr->optionsQuickRoute == OPTIONS_QUICKROUTE_ON)
         {
-            for(i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount; ++i) // To exclusively use quickmap
+            for(i = gRogueRouteTable.routeCount - 6; i < gRogueRouteTable.routeCount-3; ++i) // To exclusively use quickmap
             {
                 RogueMiscQuery_EditElement(QUERY_FUNC_INCLUDE, i);
             }
